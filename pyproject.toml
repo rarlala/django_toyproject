@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "toyproject"
+version = "0.1.0"
+description = ""
+authors = ["JEONGSUJI <wtw9611@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^3.0.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
