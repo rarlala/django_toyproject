@@ -10,17 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
+import os, json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
+SECRET_KEY = '7mjqxmsiw4+d0c+(3e_583@6&w@&7e1-&^5txo1k$(tyw0u=2@'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7mjqxmsiw4+d0c+(3e_583@6&w@&7e1-&^5txo1k$(tyw0u=2@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
