@@ -14,7 +14,11 @@ COPY        . /srv/toyproject
 WORKDIR     /srv/toyproject/app
 
 # nginx 설정파일 복사
+RUN         rm /etc/nginx/sites-enabled/default
 RUN         cp /srv/toyproject/.config/toyproject.nginx /etc/nginx/sites-enabled/
+
+# 로그폴더 생성
+RUN     mkdir /var/log/gunicorn
 
 #CMD         python manage.py runserver 0:8000
 

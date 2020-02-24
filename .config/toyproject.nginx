@@ -3,7 +3,7 @@ server {
     listen 80;
 
     # HTTP요청의 Host 값 (URL에 입력한 도메인)
-    server_name 13.124.94.217;
+    server_name default_name;
 
     # 인코딩 utf-8설정
     charset utf-8;
