@@ -8,9 +8,6 @@ app/members/__pycache__/
 app/members/migrations/__pycache__/
 .cert
 
-app/members/
-
-
 /requirements.txt
 /secrets.json
 

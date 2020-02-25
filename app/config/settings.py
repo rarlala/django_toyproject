@@ -16,6 +16,10 @@ import os, json
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
 
 SECRET_KEY = '7mjqxmsiw4+d0c+(3e_583@6&w@&7e1-&^5txo1k$(tyw0u=2@'
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
