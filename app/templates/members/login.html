@@ -20,12 +20,11 @@
             <div class="col-12 my-auto">
                 <div class="main-content text-white py-5 py-md-0">
                     <h1 class="mb-3">Login</h1>
-                    <form class="w-50">
-                        <input type="email" class="form-control mb-1" placeholder="이메일을 입력하세요.">
-                        <input type="password" class="form-control mb-2" placeholder="비밀번호를 입력하세요.">
-                        <div class="input-group-append">
-                            <button class="btn btn-warning" type="submit">로그인하기</button>
-                        </div>
+                    <form method="POST" class="w-50">
+                        {% csrf_token %}
+                        <input type="email" class="form-control mb-1" placeholder="이메일을 입력하세요." name="username">
+                        <input type="password" class="form-control mb-2" placeholder="비밀번호를 입력하세요." name="password">
+                        <button class="btn btn-warning" type="submit">로그인하기</button>
                     </form>
                     <div>
                         메일링 서비스를 가입하고 싶으신가요?
