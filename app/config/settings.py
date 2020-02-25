@@ -21,6 +21,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+AUTH_USER_MODEL = 'members.User'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +32,9 @@ ALLOWED_HOSTS = ['13.124.94.217', '*']
 # Application definition
 
 INSTALLED_APPS = [
+    'members.apps.MembersConfig',
+    'companys.apps.CompanysConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
