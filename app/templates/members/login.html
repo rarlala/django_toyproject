@@ -1,10 +1,42 @@
-<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+    <link rel="script" href="{% static 'bootstrap/bootstrap.js' %}">
+    <title>웰킵스 마스크 메일링 서비스</title>
 </head>
 <body>
-    Login 화면입니다.
+
+<div class="main">
+    <div class="row bg-dark w-100 h-100 position-absolute" style="background-color:black;">
+        <image class="position-absolute h-100"
+               src="https://images.unsplash.com/photo-1580094687196-cbc2bdab67e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+               style="right:0px;"></image>
+    </div>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 my-auto">
+                <div class="main-content text-white py-5 py-md-0">
+                    <h1 class="mb-3">Login</h1>
+                    <form class="w-50">
+                        <input type="email" class="form-control mb-1" placeholder="이메일을 입력하세요.">
+                        <input type="password" class="form-control mb-2" placeholder="비밀번호를 입력하세요.">
+                        <div class="input-group-append">
+                            <button class="btn btn-warning" type="submit">로그인하기</button>
+                        </div>
+                    </form>
+                    <div>
+                        메일링 서비스를 가입하고 싶으신가요?
+                        <a href="{% url 'index' %}" class="btn btn-outline-light" role="button"
+                           aria-pressed="true">가입하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
