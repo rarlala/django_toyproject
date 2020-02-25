@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 
 SECRET_KEY = '7mjqxmsiw4+d0c+(3e_583@6&w@&7e1-&^5txo1k$(tyw0u=2@'
-
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 

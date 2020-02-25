@@ -3,7 +3,7 @@ server {
     listen 80;
 
     # HTTP요청의 Host 값 (URL에 입력한 도메인)
-    server_name default_name;
+    server_name rarlaj.com www.rarlaj.com;
 
     # 인코딩 utf-8설정
     charset utf-8;
@@ -12,5 +12,14 @@ server {
     location / {
         # /run/gunicorn.sock 파일을 사용해서 Gunicorn과 소켓 통신하는 Proxy 구성
         proxy_pass      http://unix:/run/toyproject.sock;
+    }
+
+    # http://localhost/static
+    location /static/ {
+        alias           /srv/toyproject/.static/;
+    }
+
+    location /.well-known/acme-challenge/ {
+        alias           /srv/toyproject/.cert/;
     }
 }
