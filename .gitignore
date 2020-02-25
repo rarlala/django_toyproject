@@ -1,16 +1,21 @@
-
+# Default ignored files
 .static/
+app/config/__pycache__/
 app/companys/__pycache__/
 app/companys/migrations/__pycache__/
 app/db.sqlite3
 app/members/__pycache__/
 app/members/migrations/__pycache__/
+.cert
+
+app/members/
 
 
 /requirements.txt
 /secrets.json
 
-.idea
+/.idea
+/.idea/workspace.xml
 # Django User_uploaded static files root
 /.media
 /.static
