@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.request
 
+from companys.models import Info, Mask_Info
 from config.settings import BASE_DIR
 
 def crawling():
@@ -29,17 +30,14 @@ def crawling():
     for mask in mask_list:
         del mask[0]
 
-    # 최종 가공된 버전 mask
+    for num in range(list_len):
+        name = (mask_list[num])[0]
+        print(name)
+        desc = (mask_list[num])[1]
+        soldout = (True if (mask_list[num])[2] == "SOLD OUT"  else False)
+        price = (mask_list[num])[3]
 
-    print(mask_list)
-    # print(mask_text_list[0].split('\n'))
-    # print(mask_text_list[1].split('\n'))
+        Mask_Info.objects.get_or_create(name=name ,desc= desc,price=price,soldout=soldout)
 
 crawling()
 
-# data = {}
-
-# result.json에 저장하기
-
-# with open(os.path.join(BASE_DIR, 'result.json')) as json_file:
-#     json.dump(data, json_file)
