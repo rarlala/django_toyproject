@@ -38,5 +38,5 @@ def crawling():
 
         Mask_Info.objects.get_or_create(name=name ,desc= desc,price=price,soldout=soldout)
 
-crawling()
-
+if __name__ == '__main__':
+    crawling()
