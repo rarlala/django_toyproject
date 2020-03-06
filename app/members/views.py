@@ -1,5 +1,8 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
+
+User = get_user_model()
 
 
 def login_view(request):
@@ -22,3 +25,13 @@ def user_setting_view(request):
 
 def logout_view(request):
     logout(request)
+    return redirect('members:login')
+
+
+# 수신 상태 변경
+def send_email(request):
+    email = request.user
+    user = User.objects.get(email=email)
+    user.send_email = False if user.send_email==True else True
+    user.save()
+    return redirect('members:user-setting')

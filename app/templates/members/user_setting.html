@@ -22,7 +22,7 @@
                     <h1 class="mb-3">User Setting</h1>
                     <p style="font-size:1.3rem;">안녕하세요, <strong>{{ request.user }}</strong>님</p>
                     <p>현재 회원님께서는 웰킵스 이메일
-                        {% if request.user.authorization %}<strong class="text-primary"> 수신동의 </strong> 상태입니다. <\n>
+                        {% if request.user.send_email %}<strong class="text-success"> 수신동의 </strong> 상태입니다. <br>
                         구매 가능한 시점에 회원님의 이메일로 자동 발송됩니다.
                         {% else %} <strong class="text-warning"> 수신미동의 </strong> 상태입니다.<br>
                         하단 <i>'수신 상태 변경하기'</i> 버튼을 클릭해 수신동의 상태로 변경하시면 <br>
@@ -30,9 +30,9 @@
                         {% endif %}
                     </p>
 
-                    <button class="btn btn-primary" type="submit">수신 상태 변경하기</button>
-                    <button class="btn btn-secondary" type="submit">로그아웃</button>
-                    <button class="btn btn-outline-secondary" type="submit">회원탈퇴하기</button>
+                    <a href="{% url 'members:send-email' %}" class="btn btn-primary" type="submit">수신 상태 변경하기</a>
+                    <a href="{% url 'members:logout'%}" class="btn btn-secondary" type="submit">로그아웃</a>
+                    <a class="btn btn-outline-secondary" type="submit">회원탈퇴하기</a>
 
                 </div>
             </div>
