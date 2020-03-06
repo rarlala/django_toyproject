@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os, json
 
+# secrets.json
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
@@ -21,7 +23,12 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-SECRET_KEY = '7mjqxmsiw4+d0c+(3e_583@6&w@&7e1-&^5txo1k$(tyw0u=2@'
+secret_file = os.path.join(ROOT_DIR, 'secrets.json')
+
+with open(secret_file) as f:
+    json_data = json.load(f)
+
+SECRET_KEY = json_data['SECRET_KEY']
 STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -49,6 +56,16 @@ INSTALLED_APPS = [
 
     'django_extensions',
 ]
+
+# mail setting
+
+EMAIL_BACKEND = json_data['EMAIL_BACKEND']
+EMAIL_HOST = json_data['EMAIL_HOST']
+EMAIL_HOST_USER = json_data['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = json_data['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

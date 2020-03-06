@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.request
 
+from django.core.mail import send_mail
 from companys.models import Info, Mask_Info
 from config.settings import BASE_DIR
 
@@ -40,3 +41,13 @@ def crawling():
 
 crawling()
 
+
+
+
+send_mail(
+    '웰킵스 구매 가능!',
+    '마스크 구매가능',
+    'welkeeps.service@gmail.com',
+    ['wtw9611@gmail.com'],
+    fail_silently=False,
+)
