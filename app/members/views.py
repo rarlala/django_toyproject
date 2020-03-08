@@ -20,7 +20,9 @@ def login_view(request):
 
 
 def user_setting_view(request):
-    return render(request, 'members/user_setting.html')
+    if str(request.user) != 'AnonymousUser':
+        return render(request, 'members/user_setting.html')
+    return redirect('members:login')
 
 
 def logout_view(request):
