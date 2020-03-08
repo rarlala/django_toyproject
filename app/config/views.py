@@ -32,6 +32,3 @@ def index(request):
             return redirect('members:user-setting')
 
         return redirect('members:login')
-
-def test(request):
-    return render(request, 'popup/test.html')
