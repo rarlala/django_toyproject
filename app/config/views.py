@@ -1,7 +1,7 @@
 from django.contrib.auth import login
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
+from django.contrib import messages
 from members.models import User
 
 
@@ -14,10 +14,11 @@ def index(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        if User.objects.filter(username=username).exists():
-            return HttpResponse('이미 가입된 email입니다 :)')
         if User.objects.filter(email=email).exists():
-            return HttpResponse('이미 사용중인 email입니다 :)')
+            messages.add_message(request, messages.ERROR, '앗! 이미 사용중인 email입니다.')
+            return redirect('index')
+            # messages.info(request, '이미 사용중인 email입니다 :)')
+            # return HttpResponse('이미 사용중인 email입니다 :)')
 
         user = User.objects.create_user(
             password=password,
@@ -31,3 +32,6 @@ def index(request):
             return redirect('members:user-setting')
 
         return redirect('members:login')
+
+def test(request):
+    return render(request, 'popup/test.html')
