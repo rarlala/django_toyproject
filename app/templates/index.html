@@ -19,14 +19,14 @@
         <div class="row h-100">
             <div class="col-12 my-auto">
                 <div class="main-content text-white py-5 py-md-0">
-                    <h1 class="mb-3">웰킵스 마스크 메일링 서비스</h1>
+                    <h1 class="mb-3">웰킵스 마스크 메일링 서비스 신청하기</h1>
                     <p class="mb-5">매일 판매하고 있는 웰킵스 마스크 사이트에서
                         <strong>마스크가 구매가능할 때</strong> 메일로 알림을 드려요.</p>
                     <p class="mb-2 text-info small">이메일과 비밀번호 입력 시 메일링 서비스에 동의한 것으로 간주되어 메일이 발송됩니다.</p>
                     <form method="POST" class="w-50">
                         {% csrf_token %}
-                        <input type="email" name="username" class="form-control mb-1" placeholder="이메일을 입력하세요.">
-                        <input type="password" name="password" class="form-control mb-2" placeholder="비밀번호를 입력하세요.">
+                        <input type="email" name="username" class="form-control mb-1" placeholder="실 사용중인 이메일을 입력하세요.">
+                        <input type="password" name="password" class="form-control mb-2" placeholder="사용할 비밀번호를 입력하세요.">
                         {% if messages %}
                         {% for message in messages %}
                         <p class="text-warning">{{ message.message }}</p>

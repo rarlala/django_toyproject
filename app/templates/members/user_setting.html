@@ -33,13 +33,13 @@
                         {% endif %}
                     </p>
 
-                    <a href="{% url 'members:send-email' %}" class="btn btn-primary" type="submit">수신 상태 변경하기</a>
-                    <a href="{% url 'members:logout'%}" class="btn btn-secondary" type="submit">로그아웃</a>
-                    <a class="btn btn-outline-secondary" type="submit">회원탈퇴하기</a>
+                    <a href="{% url 'members:send-email' %}" class="btn btn-primary" type="button">수신 상태 변경하기</a>
+                    <a href="{% url 'members:logout'%}" class="btn btn-secondary" type="button">로그아웃</a>
+                    <a href="{% url 'members:withdrawal' %}" class="btn btn-outline-secondary" type="button">회원탈퇴하기</a>
+                    <!--                    <button class="btn btn-outline-secondary" type="button"-->
+                    <!--                            data-toggle="modal" data-target="#myModal">회원탈퇴하기-->
+                    <!--                    </button>-->
 
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open
-                        Modal
-                    </button>
                 </div>
             </div>
         </div>
@@ -48,30 +48,29 @@
 
 <!-- 팝업 -->
 
-    <div class="container">
-        <h2>Modal Example</h2>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!--<div class="container">-->
+<!--    <div class="modal fade" id="myModal" role="dialog">-->
+<!--        <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h4 class="modal-title">정말 회원을 탈퇴하시겠습니까?</h4>-->
+<!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <p>탈퇴를 원하시면 하단 <strong>탈퇴</strong> 버튼을 클릭해주세요.</p>-->
+<!--                    <p>원치 않으시면 <strong>취소</strong> 버튼을 클릭하세요.</p>-->
+<!--                </div>-->
+<!--                <div class="modal-footer">-->
+<!--                    <form method="POST">-->
+<!--                        <button class="btn btn-danger"-->
+<!--                           data-target="{% url 'members:withdrawal' %}" data-dismiss="modal">탈퇴</button>-->
+<!--                    </form>-->
+<!--                    <button type="button" class="btn btn-info" data-dismiss="modal">취소</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
