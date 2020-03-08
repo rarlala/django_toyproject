@@ -47,7 +47,9 @@ def send_email(request):
 
 # 회원탈퇴 처리
 def withdrawal(request):
+    # if request.method == 'POST':
     print('회원탈퇴 함수 접근')
     request.user.delete()
     messages.add_message(request, messages.ERROR, '회원탈퇴가 완료되었습니다.')
     return redirect('index')
+    # else: return redirect('members:user-setting')
