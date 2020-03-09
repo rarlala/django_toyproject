@@ -17,8 +17,6 @@ def index(request):
         if User.objects.filter(email=email).exists():
             messages.add_message(request, messages.ERROR, '앗! 이미 사용중인 email입니다.')
             return redirect('index')
-            # messages.info(request, '이미 사용중인 email입니다 :)')
-            # return HttpResponse('이미 사용중인 email입니다 :)')
 
         user = User.objects.create_user(
             password=password,

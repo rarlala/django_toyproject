@@ -44,6 +44,7 @@ ALLOWED_HOSTS = ['13.124.94.217', '*']
 INSTALLED_APPS = [
     'members.apps.MembersConfig',
     'companys.apps.CompanysConfig',
+    'mail.apps.MailConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,8 +64,8 @@ from django.contrib.messages import constants as messages_constants
 MESSAGE_LEVEL = messages_constants.DEBUG
 
 # mail setting
-EMAIL_BACKEND = json_data['EMAIL_BACKEND']
-EMAIL_HOST = json_data['EMAIL_HOST']
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = json_data['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = json_data['EMAIL_HOST_PASSWORD']
 EMAIL_PORT = 587
